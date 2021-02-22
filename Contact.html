@@ -32,12 +32,12 @@
       <!----------------------------------------------->
       <!-- left Sidebar -->
       <!----------------------------------------------->
-      <div id="leftSidebar" style="height: 45em"></div>
+      <div id="leftSidebar" style="height: 53em"></div>
 
     	<!----------------------------------------------->
     	<!-- right Sidebar -->
     	<!----------------------------------------------->
-      <div id="rightSidebar" style="height: 45em"></div>
+      <div id="rightSidebar" style="height: 53em"></div>
 
     	<!----------------------------------------------->
     	<!-- Main Content -->
@@ -55,7 +55,59 @@
               <LI><b>LinkedIN:</b> <a href="https://www.linkedin.com/in/jhuntgamesdev/">Here</a>.</LI>
             </UL>
           </center>
+          <br>
         </p>
+
+        <center>
+          <a id="gameLink" href="https://github.com/JHuntsGHub/Boss-Battle">
+            <img class="wideBeveledImage" id="gameImage" src="img/Games/BossBattle_Medium.png" alt="Contact"/>
+          </a>
+          <p style="text-decoration: underline" id="gameText">
+            Boss Battle
+          </p>
+        </center>
+
+        <!----------------------------------------------->
+      	<!-- This script cycles through images -->
+      	<!----------------------------------------------->
+        <script type="text/javascript">
+
+          ///gameImage, gameLink and gameText are the outside elements that need changing.
+          var gameImage = document.getElementById("gameImage");
+          var gameLink = document.getElementById("gameLink");
+          var gameText = document.getElementById("gameText");
+
+          ///imgRef is just the way I chose to group the source, link and text together for the cycle.
+          class imgRef {
+            constructor(source, link, text) {
+              this.imageSource = source;
+              this.imageLink = link;
+              this.imageText = text;
+            }
+          }
+
+          ///images is where each image with it's link/text is initialised.
+          var images = [new imgRef("img/Games/BossBattle_Medium.png", "https://github.com/JHuntsGHub/Boss-Battle", "Boss Battle"),
+                        new imgRef("img/Games/HotelHell_Medium.png", "https://github.com/JHuntsGHub/Hotel-Hell-Game", "Hotel Hell"),
+                        new imgRef("img/Games/DroneRacer_Medium.png", "https://github.com/JHuntsGHub/Drone-Racer", "Drone Racer"),
+                        new imgRef("img/Games/Defender_Medium.png", "https://github.com/JHuntsGHub/Defender-Clone", "Defender Clone"),
+                        new imgRef("img/Games/RogueLight_Medium.png", "https://github.com/JHuntsGHub/Rogue-Light", "Rogue Light")];
+
+          ///changeImage is the function that actually changes the data, it simply iterates through the array when called.
+          var currIndex = 0;
+          function changeImage(){
+            if(++currIndex >= images.length){
+              currIndex = 0;
+            }
+
+            gameImage.src = images[currIndex].imageSource;
+            gameLink.href = images[currIndex].imageLink;
+            gameText.innerHTML = images[currIndex].imageText;
+          }
+
+          ///I set the interval for each image to change to 3.5 seconds.
+          setInterval(changeImage, 3500);
+        </script>
 
     	</div>
 
