@@ -96,3 +96,7 @@ body  {
 .testBorder { /* Only used to visualise placements. Just for temporary use. */
 	border: 2px solid #000000;
 }
+
+.extraLineSpacing {
+	line-height: 40px;
+}
