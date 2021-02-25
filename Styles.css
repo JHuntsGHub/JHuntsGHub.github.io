@@ -1,6 +1,5 @@
 body  {
 	font: 100% Verdana, Arial, Helvetica, sans-serif;
-	/*background-image: URL(img/LaceBackground.png);*/
 	background: #D7C9AA;
 	background-size: contain;
 	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
