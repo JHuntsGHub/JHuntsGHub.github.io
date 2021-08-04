@@ -9,43 +9,67 @@ body  {
 }
 
 .theBody #container {
-	width: 70em;  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
-	background:#D7C9AA;
+	width: 90em;  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
+	background: #0B7A75;
 	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
 	text-align: left; /* this overrides the text-align: center on the body element. */
 }
-.theBody #header {
-	background: #0B7A75;
-}
-.theBody #header h1 {
-	text-align: center;
-	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
-}
-
-.theBody #rightSidebar {
-	float: right;
-	width: 3em; /* since this element is floated, a width must be given */
-}
-.theBody #leftSidebar {
-	float: left;
-	width: 3em; /* since this element is floated, a width must be given */
-}
-.theBody #leftSidebar, .theBody #rightSidebar{
-	height: 155em;
-	background: #0B7A75; /* the background color will be displayed for the length of the content in the column, but no further */
-	padding: 15px 0; /* top and bottom padding create visual space within this div */
-}
-.theBody #leftSidebar h3, .theBody #leftSidebar p, .theBody #rightSidebar p, .theBody #rightSidebar h3 {
-	margin-left: 10px; /* the left and right margin should be given to every element that will be placed in the side columns */
-	margin-right: 10px;
-}
 
 .theBody #mainContent {
- 	margin: 0 6em 0 6em; /* the right margin can be given in ems or pixels. It creates the space down the right side of the page. */
+ 	margin: 1em 2em 0 2em;
 }
-.theBody #mainContent H1, .theBody #mainContent H2 {
- 	text-align: center;
+
+.theBody #middleSection {
+	width: 100%;
 }
+
+.theBody #leftSide {
+	width: 70%;
+	float: left;
+}
+
+.theBody #rightSide {
+	width: 30%;
+	float: right;
+}
+
+.theBody #leftContent, #rightContent, #middleContent {
+	background: #D7C9AA;
+	border-radius: 1.5em;
+}
+
+.theBody #leftContent, #rightContent {
+	height: 175em; /* maybe change this with some js later, not really the best solution right now. */
+}
+
+.theBody #leftContent H1, #leftContent H3, #rightContent H1, #middleContent H1 {
+	text-align: center;
+}
+
+.theBody #leftContent LI {
+	margin-bottom: 0.35em;
+}
+
+.theBody #rightContent td {
+	text-align: center;
+}
+
+.theBody #rightContent table {
+	border-spacing: 3em 0;
+}
+
+.theBody #rightContent UL {
+	margin-right: 7px;
+}
+
+.theBody #leftContent {
+	margin: 1em 1em 1em 0;
+}
+
+.theBody #rightContent {
+	margin: 1em 0 1em 1em;
+}
+
 .theBody #footer {
 	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
 	background:#0B7A75;
@@ -58,14 +82,6 @@ body  {
 	line-height: 2em;
 }
 
-.fltrt { /* this class can be used to float an element right of the page. The floated element must precede the element it should be next to on the page. */
-	float: right;
-	margin-left: 8px;
-}
-.fltlft { /* this class can be used to float an element left in your page */
-	float: left;
-	margin-right: 8px;
-}
 .clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
 	clear:both;
   height:0;
@@ -79,6 +95,8 @@ body  {
 }
 
 .beveledImage{
+	/*width: 80%;
+	height: 80%;*/
 	border-radius: 10%;
 	border: 4px solid #0B7A75;
 }
@@ -90,10 +108,6 @@ body  {
 
 .textToTop {
 	vertical-align: text-top;
-}
-
-.testBorder { /* Only used to visualise placements. Just for temporary use. */
-	border: 2px solid #000000;
 }
 
 .extraLineSpacing {

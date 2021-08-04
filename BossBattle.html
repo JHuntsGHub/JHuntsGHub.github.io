@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="Author" content="Jack Hunt" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jack Hunt - Game Developer Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css" />
+  </head>
+
+  <body class="theBody">
+
+    <div id="container">
+
+    	<!----------------------------------------------->
+    	<!-- Header -->
+    	<!----------------------------------------------->
+      <div id="header">
+    		<center>
+      		<A HREF = "index.html">
+      		 	<IMG SRC="img/Banner.png" width="100%" Border="0" ALT="Banner">
+      		</A>
+    		</center>
+      </div>
+      <!-- end #header -->
+
+    	<!----------------------------------------------->
+    	<!-- Main Content -->
+    	<!----------------------------------------------->
+      <div id="mainContent">
+    		<div id="middleSection">
+          <div id="middleContent">
+            <br>
+            <H1>Boss Battle</H1>
+
+
+        		<p>
+              <center>
+                Here are some games that I've made, click the pictures for a better look.
+              </center>
+            </p>
+            <br><br>
+
+            <center>
+              <a id="gameLink" href="https://github.com/JHuntsGHub/Boss-Battle">
+                <img class="wideBeveledImage" id="gameImage" src="img/Games/BossBattle_Medium.png" alt="Contact"/>
+              </a>
+              <p style="text-decoration: underline" id="gameText">
+                Boss Battle
+              </p>
+            </center>
+
+            <!----------------------------------------------->
+          	<!-- This script cycles through images -->
+          	<!----------------------------------------------->
+            <script type="text/javascript">
+
+              ///gameImage, gameLink and gameText are the outside elements that need changing.
+              var gameImage = document.getElementById("gameImage");
+              var gameLink = document.getElementById("gameLink");
+              var gameText = document.getElementById("gameText");
+
+              ///imgRef is just the way I chose to group the source, link and text together for the cycle.
+              class imgRef {
+                constructor(source, link, text) {
+                  this.imageSource = source;
+                  this.imageLink = link;
+                  this.imageText = text;
+                }
+              }
+
+              ///images is where each image with it's link/text is initialised.
+              var images = [new imgRef("img/Games/BossBattle_Medium.png", "https://github.com/JHuntsGHub/Boss-Battle", "Boss Battle"),
+                            new imgRef("img/Games/HotelHell_Medium.png", "https://github.com/JHuntsGHub/Hotel-Hell-Game", "Hotel Hell"),
+                            new imgRef("img/Games/DroneRacer_Medium.png", "https://github.com/JHuntsGHub/Drone-Racer", "Drone Racer"),
+                            new imgRef("img/Games/Defender_Medium.png", "https://github.com/JHuntsGHub/Defender-Clone", "Defender Clone"),
+                            new imgRef("img/Games/RogueLight_Medium.png", "https://github.com/JHuntsGHub/Rogue-Light", "Rogue Light")];
+
+              ///changeImage is the function that actually changes the data, it simply iterates through the array when called.
+              var currIndex = 0;
+              function changeImage(){
+                if(++currIndex >= images.length){
+                  currIndex = 0;
+                }
+
+                gameImage.src = images[currIndex].imageSource;
+                gameLink.href = images[currIndex].imageLink;
+                gameText.innerHTML = images[currIndex].imageText;
+              }
+
+              ///I set the interval for each image to change to 3.5 seconds.
+              setInterval(changeImage, 3500);
+            </script>
+
+        		<table>
+              <!----------------------------------------------->
+              <!-- Game Showcase - Boss Battle -->
+              <!----------------------------------------------->
+        			<tr>
+        				<td>
+              		<p>
+                    <h3><b>Boss Battle</b></h3>
+                      <UL>
+                        <LI>I made this game myself using premade 3D models.</LI>
+                        <LI>The focus for this project was AI.</LI>
+                        <LI>Features a custom-made pathfinding algorithm that was a modified version of A*.</LI>
+                        <LI>Heavy use of behaviour trees to accomplish the various agents.</LI>
+                        <LI>I really enjoyed creating this game and learned a lot about AI. I was very comfortable with finite state machines before so learning about behaviour trees was a lot of fun.</LI>
+                      </UL>
+              		</p>
+        				</td>
+        				<td>
+              		<a href="https://github.com/JHuntsGHub/Boss-Battle">
+                    <img src="img/Games/BossBattle_3_Small.png" alt="DroneRacer.png" class="beveledImage"/>
+              		</a>
+              	</td>
+        			</tr>
+
+        		</table>
+
+            <br>
+          </div>
+        </div>
+    	</div>
+
+    	<!----------------------------------------------->
+    	<!-- Footer -->
+    	<!----------------------------------------------->
+    	<div id="footer">
+        <p>
+          For any queries, please contact me at:<br>
+          (+44)7342820032<br>
+          <a href="MailTo:JHunt.WorkEmail@gmail.com"><img src="img/Logos/Email.png"  alt="Email"/></a>
+          <a href="https://github.com/JHuntsGHub"><img src="img/Logos/GitHub.png"  alt="GitHub"/></a>
+          <a href="https://www.linkedin.com/in/jhuntgamesdev/"><img src="img/Logos/Linkedin.png"  alt="LinkedIN"/></a>
+        </p>
+    	</div>
+    </div>
+  </body>
+</html>
